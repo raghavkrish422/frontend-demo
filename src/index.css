@@ -1,0 +1,136 @@
+/* Tailwind CSS directives - inject base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * Design System Definition
+ * All colors, gradients, fonts, shadows, and design tokens are defined here
+ * CRITICAL: All colors MUST use HSL format for proper theming and manipulation
+ * These CSS variables are referenced in tailwind.config.ts
+ */
+
+@layer base {
+  /* Light mode / default theme color definitions */
+  :root {
+    /* Base colors for backgrounds and text */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 222.2 84% 4.9%; /* Near-black text */
+
+    /* Card component colors */
+    --card: 0 0% 100%; /* White card background */
+    --card-foreground: 222.2 84% 4.9%; /* Dark text on cards */
+
+    /* Popover/dropdown colors */
+    --popover: 0 0% 100%; /* White popover background */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark text in popovers */
+
+    /* Primary brand colors */
+    --primary: 222.2 47.4% 11.2%; /* Dark blue primary */
+    --primary-foreground: 210 40% 98%; /* Light text on primary */
+
+    /* Secondary UI element colors */
+    --secondary: 210 40% 96.1%; /* Light gray secondary */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Dark text on secondary */
+
+    /* Muted/subdued element colors */
+    --muted: 210 40% 96.1%; /* Light gray for muted backgrounds */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Medium gray for muted text */
+
+    /* Accent colors for highlighting */
+    --accent: 210 40% 96.1%; /* Light blue accent */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Dark text on accent */
+
+    /* Destructive/error state colors */
+    --destructive: 0 84.2% 60.2%; /* Red for errors */
+    --destructive-foreground: 210 40% 98%; /* White text on errors */
+
+    /* Border and input colors */
+    --border: 214.3 31.8% 91.4%; /* Light gray borders */
+    --input: 214.3 31.8% 91.4%; /* Light gray input borders */
+    --ring: 222.2 84% 4.9%; /* Dark focus ring */
+
+    /* Border radius token */
+    --radius: 0.5rem; /* 8px rounded corners */
+
+    /* Sidebar component colors */
+    --sidebar-background: 0 0% 98%; /* Near-white sidebar */
+    --sidebar-foreground: 240 5.3% 26.1%; /* Dark text in sidebar */
+    --sidebar-primary: 240 5.9% 10%; /* Dark primary in sidebar */
+    --sidebar-primary-foreground: 0 0% 98%; /* Light text on primary */
+    --sidebar-accent: 240 4.8% 95.9%; /* Light accent in sidebar */
+    --sidebar-accent-foreground: 240 5.9% 10%; /* Dark text on accent */
+    --sidebar-border: 220 13% 91%; /* Light border in sidebar */
+    --sidebar-ring: 217.2 91.2% 59.8%; /* Blue focus ring in sidebar */
+
+    /* Custom Credit Card App Colors */
+    --navy-dark: 213 47% 23%; /* Dark navy (#0C365A) for backgrounds */
+    --navy-medium: 213 38% 32%; /* Medium navy for gradients */
+    --card-blue: 229 44% 48%; /* Blue for credit card background */
+    --action-blue: 217 91% 60%; /* Bright blue for buttons and actions */
+    --light-gray: 210 17% 95%; /* Light gray for subtle backgrounds */
+  }
+
+  /* Dark mode theme color definitions */
+  .dark {
+    /* Inverted base colors for dark mode */
+    --background: 222.2 84% 4.9%; /* Near-black background */
+    --foreground: 210 40% 98%; /* Light text */
+
+    /* Dark mode card colors */
+    --card: 222.2 84% 4.9%; /* Dark card background */
+    --card-foreground: 210 40% 98%; /* Light text on cards */
+
+    /* Dark mode popover colors */
+    --popover: 222.2 84% 4.9%; /* Dark popover background */
+    --popover-foreground: 210 40% 98%; /* Light text in popovers */
+
+    /* Dark mode primary colors */
+    --primary: 210 40% 98%; /* Light primary in dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Dark text on primary */
+
+    /* Dark mode secondary colors */
+    --secondary: 217.2 32.6% 17.5%; /* Dark gray secondary */
+    --secondary-foreground: 210 40% 98%; /* Light text on secondary */
+
+    /* Dark mode muted colors */
+    --muted: 217.2 32.6% 17.5%; /* Dark muted background */
+    --muted-foreground: 215 20.2% 65.1%; /* Medium light muted text */
+
+    /* Dark mode accent colors */
+    --accent: 217.2 32.6% 17.5%; /* Dark accent */
+    --accent-foreground: 210 40% 98%; /* Light text on accent */
+
+    /* Dark mode destructive colors */
+    --destructive: 0 62.8% 30.6%; /* Darker red for errors */
+    --destructive-foreground: 210 40% 98%; /* Light text on errors */
+
+    /* Dark mode borders and inputs */
+    --border: 217.2 32.6% 17.5%; /* Dark borders */
+    --input: 217.2 32.6% 17.5%; /* Dark input borders */
+    --ring: 212.7 26.8% 83.9%; /* Light focus ring */
+    
+    /* Dark mode sidebar colors */
+    --sidebar-background: 240 5.9% 10%; /* Very dark sidebar */
+    --sidebar-foreground: 240 4.8% 95.9%; /* Light text in sidebar */
+    --sidebar-primary: 224.3 76.3% 48%; /* Blue primary in sidebar */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on primary */
+    --sidebar-accent: 240 3.7% 15.9%; /* Dark accent in sidebar */
+    --sidebar-accent-foreground: 240 4.8% 95.9%; /* Light text on accent */
+    --sidebar-border: 240 3.7% 15.9%; /* Dark border in sidebar */
+    --sidebar-ring: 217.2 91.2% 59.8%; /* Blue focus ring */
+  }
+}
+
+/* Base layer utilities applied globally */
+@layer base {
+  /* Apply border color to all elements */
+  * {
+    @apply border-border;
+  }
+
+  /* Apply background and text color to body element */
+  body {
+    @apply bg-background text-foreground;
+  }
+}
